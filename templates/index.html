@@ -13,6 +13,18 @@
   <body>
     <h1>FlexAdmin!</h1>
 
+    {% if user.is_authenticated %}
+          Hi {{ user.username }}!
+          <p><a href="{% url 'logout' %}">Log Out</a></p>
+  {% else %}
+          <p>You are not logged in</p>
+          <a href="{% url 'login' %}">Log In</a>
+  {% endif %}
+  
+  {% if user.is_superuser%}
+          <a href="/admin/">pagina_administrativo</a>
+  {% endif %}
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
