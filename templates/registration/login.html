@@ -12,24 +12,25 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="{% static 'registration/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
         <title>Login</title>
 
     
 
     </head>
-    <style>
+    <!-- <style>
         body {
 
 
-        background-image: url({% static 'img/imagem_login.jpeg' %});
+        background-image: url({% static 'img/imagem_login.jpeg' %});]
+        background-size: 250px;
 
     }
-    </style>
+    </style> -->
 
-    <body>
-    
+<body>
+    {% include 'header.html' %}
 
             {% if form.errors %}
             <p>Your username and password didn't match. Please try again.</p>
