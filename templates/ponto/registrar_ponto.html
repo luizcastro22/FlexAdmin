@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Ponto</title>
+</head>
+<body>
+    <h1>Registro de Ponto</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrar</button>
+    </form>
+    
+    <h2>Registros</h2>
+    <ul>
+        {% for registro in registros %}
+            <li>{{ registro.get_tipo_display }} - {{ registro.data_hora }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
