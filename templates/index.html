@@ -32,6 +32,9 @@
 
   {% if user.is_authenticated%}
     <a href="/ponto/">registrar login</a>
+  {% else %}
+      <p>se cadastre aqui</p>
+      <a href="/contrib/">cadastrar</a>
   {% endif %}
 
     <!-- Optional JavaScript; choose one of the two! -->
