@@ -1,6 +1,97 @@
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-    <button type="submit">Log In</button>
-</form>
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- <link rel="stylesheet" href="login.css"> -->
+
+        <title>Login</title>
+
+    
+
+    </head>
+
+    <body>
+    
+
+            {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+            {% else %}
+            <p>Please login to see this page.</p>
+            {% endif %}
+        {% endif %}
+        <div id="login">
+
+            <form class="card"method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+
+                <div class="card-header">
+
+
+                    <h2>Login</h2>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-content-area">
+                        <tr>
+                            <td>{{ form.username.label_tag }}</td>
+                            <td>{{ form.username }}</td>
+                        </tr>
+
+                    </div>
+
+                    <div class="card-content-area">
+
+                        <tr>
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                          </tr>
+                        
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <input type="submit" value="login" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+
+
+                    <!-- <a href="#" class="recuperar_senha">Esqueceu a senha?</a> -->
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </body>
+
+</html>
+
+
+
+  
+     
+      
+    >
+
+  <!-- {# Assumes you setup the password_reset view in your URLconf #}
+  <p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+
