@@ -1,0 +1,7 @@
+<!-- cadastro_gerente.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ gerente_form.as_p }}
+    <button type="submit">Cadastrar Gerente</button>
+</form>

@@ -26,12 +26,12 @@
   {% endif %}
 <br>
 <br>
-  {% if user.is_superuser%}
+  {% if user.is_authenticated%}
            <a href="/gerencia/">Pagina_gerencia</a>
   {% endif %}  
 
   {% if user.is_authenticated%}
-    <a href="/ponto/">registrar login</a>
+    <a href="/ponto/">registrar ponto</a>
   {% else %}
       <p>se cadastre aqui</p>
       <a href="/contrib/">cadastrar</a>

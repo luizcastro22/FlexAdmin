@@ -26,5 +26,7 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html"), name="home"),
     path('ponto/', include('ponto.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
+    path('gerencia/', include('gerencia.urls')),
+
 
 ]

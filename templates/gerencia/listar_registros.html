@@ -1,0 +1,13 @@
+<!-- listar_registros.html -->
+<h1>Registros de Ponto para {{ funcionario.nome }}</h1>
+<ul>
+    {% for registro in registros %}
+        <li>
+            {{ registro.tipo }} - {{ registro.data_hora }}
+            <a href="{% url 'alterar_registros' registro.id %}">Alterar</a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+    

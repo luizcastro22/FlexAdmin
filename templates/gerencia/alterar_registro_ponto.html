@@ -1,0 +1,6 @@
+<!-- alterar_registro_ponto.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+</form>
