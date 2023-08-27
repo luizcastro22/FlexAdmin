@@ -24,7 +24,7 @@ body {
 
 .card {
 
-    background-color: rgba(19, 19, 19, 0.3);
+    background-color:rgba(0, 0, 0, 0.600);
 
     padding: 40px;
 
@@ -68,7 +68,7 @@ body {
 
     font-size: 12px;
 
-    opacity: 0.8;
+    opacity: 5.0;
 
 }
 
@@ -130,7 +130,7 @@ body {
 
     font-size: 12px;
 
-    opacity: 0.8;
+    opacity: 5.0;
 
     color: #fff;
 
